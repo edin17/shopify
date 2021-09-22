@@ -1,0 +1,65 @@
+.home main {
+  height: auto;
+}
+
+.home main .top-items {
+  width: 80vw;
+  height: 50vh;
+  border: 1px dashed #cecece;
+  border-radius: 10px;
+  margin: 1vw 0vw 0vw 10vw;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow-x: scroll;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home main .top-items .top-item {
+  width: 200px;
+  height: 300px;
+  margin-left: 50px;
+  border: 1px solid #cecece;
+  cursor: pointer;
+}
+
+.home main .top-items .top-item .image-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 50%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home main .top-items .top-item .image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+.home main .top-items .top-item h3 {
+  text-align: center;
+  width: 200px;
+}
+
+.home main .top-items .top-item p {
+  margin: 0;
+  margin-left: 10px;
+}
+
+.home main .top-items .top-item #price {
+  color: green;
+  font-weight: 700;
+  float: right;
+  margin: 0;
+  margin-right: 10px;
+}
+/*# sourceMappingURL=home.css.map */
