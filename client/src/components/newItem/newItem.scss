@@ -1,3 +1,13 @@
+@mixin button {
+    width: 250px;
+    height: 32px;
+    position: absolute;
+    margin-top: 130px;
+    background: linear-gradient(90deg, #01bf1a 0%, #0f6b7d 100%);
+    border: none;
+    color: white;
+    font-weight: 800;
+}
 .newitem{
     #title{
         text-align: center;
@@ -7,21 +17,19 @@
         margin: 0 auto;
         width: 50vw;
         text-align: center;
+        button{
+            @include button();
+            margin-top: 20px;
+            position: relative;
+        }
        div{
         width: 100%;
         height: 300px;
         border: 1px dashed rgb(228, 228, 228);
         button{
-            width: 250px;
-            height: 32px;
-            position: absolute;
-            margin-top: 130px;
-            background: linear-gradient(90deg, #01bf1a 0%, #0f6b7d 100%);
-            border: none;
-            color: white;
-            font-weight: 800;
+            @include button();
         }
-        input{
+        #fileopen{
             width: 250px;
             height: 32px;
             opacity: 0;
@@ -44,6 +52,16 @@
        select{
            width: 100%;
            height: 32px;
+           margin-top: 10px;
+           div{
+               width: 20px;
+               height: 20px;
+               border-radius: 50%;
+           }
+       }
+       textarea{
+           width: 100%;
+           height: 100px;
        }
     }
 }

@@ -16,7 +16,9 @@ export default function NewItem(){
         };
         reader.readAsDataURL(input.files[0]);
       };
-      let [sizes,setSizes]=useState([])
+      let [sizes,setSizes]=useState([]);
+      let [colors,setColors]=useState([])
+      let [description,setDescription]=useState("")
       function pushSizes(val){
           console.log(val)
         let valFound=sizes.find(size=>size===val);
@@ -31,6 +33,21 @@ export default function NewItem(){
         }
         
       }
+      function pushColors(val){
+        
+      let valFound=colors.find(size=>size===val);
+      if(!valFound){
+          if(val!=="All"){
+              setColors([...colors,val])
+              
+          }else{
+              setColors([]);
+              setColors(["All"])
+          }
+      }
+      
+    }
+    console.log(colors)
       function upload(){
 
       }
@@ -41,7 +58,7 @@ export default function NewItem(){
         <form onSubmit={()=>upload()}>
             <div>
                 {!file?<button>UPLOAD</button>:""}
-                {!file?<input type="file" alt="item" onChange={(e)=>openFile(e)}/>:<img alt="photo" id="output" />}
+                {!file?<input id="fileopen" type="file" alt="item" onChange={(e)=>openFile(e)}/>:<img alt="photo" id="output" />}
             </div>
             <input type="text" placeholder="Name of product"/>
             <select  onChange={(e)=>pushSizes(e.target.value)}>
@@ -53,6 +70,21 @@ export default function NewItem(){
                 <option>2XL</option>
                 <option>3XL</option>
             </select>
+            <select  onChange={(e)=>pushColors(e.target.value)}>
+                <option>All</option>
+                <option>White</option>
+                <option>Black</option>
+                <option>Red</option>
+                <option>Blue</option>
+                <option>Green</option>
+                <option>Orange</option>
+                <option>Pink</option>
+                <option>Purple</option>
+                <option>Brown</option>
+            </select>
+            <input type="number" placeholder="Price (200)"/>
+            <textarea placeholder="Type description"></textarea>
+            <button>ADD PRODUCT</button>
         </form>
     </div>
 }
